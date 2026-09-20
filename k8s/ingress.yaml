@@ -4,7 +4,7 @@ metadata:
   name: paperless
   namespace: paperless
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
     - host: paperless.local
       http:

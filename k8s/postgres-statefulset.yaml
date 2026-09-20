@@ -19,11 +19,10 @@ spec:
           image: postgres:17
           ports:
             - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: postgres-config
           env:
-            - name: POSTGRES_DB
-              value: "paperless"
-            - name: POSTGRES_USER
-              value: "paperless"
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:

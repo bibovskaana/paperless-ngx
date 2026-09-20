@@ -10,5 +10,4 @@ data:
   PAPERLESS_DBNAME: "paperless"
   PAPERLESS_DBUSER: "paperless"
   PAPERLESS_REDIS: "redis://redis:6379"
-  PAPERLESS_URL: "http://paperless.local"
   PAPERLESS_TIME_ZONE: "Europe/Skopje"

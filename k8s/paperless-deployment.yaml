@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: paperless
-          image: bibovskaana/paperless-ngx:latest
+          image: anabibovska/paperless-ngx:latest
           ports:
             - containerPort: 8000
           envFrom:
@@ -32,6 +32,13 @@ spec:
                 secretKeyRef:
                   name: paperless-secret
                   key: PAPERLESS_SECRET_KEY
+          volumeMounts:
+            - name: consume
+              mountPath: /usr/src/paperless/consume
+            - name: media
+              mountPath: /usr/src/paperless/media
+            - name: data
+              mountPath: /usr/src/paperless/data
           readinessProbe:
             httpGet:
               path: /
@@ -44,3 +51,10 @@ spec:
               port: 8000
             initialDelaySeconds: 60
             periodSeconds: 20
+      volumes:
+        - name: consume
+          emptyDir: {}
+        - name: media
+          emptyDir: {}
+        - name: data
+          emptyDir: {}
