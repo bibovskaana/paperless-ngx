@@ -29,5 +29,5 @@ jobs:
           context: .
           push: true
           tags: |
-            bibovskaana/paperless-ngx:latest
-            bibovskaana/paperless-ngx:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/paperless-ngx:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/paperless-ngx:${{ github.sha }}
